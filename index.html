@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width" />
         <title>Phil Uebbing</title>
+        <link rel="shortcut icon" type="img/jpg" href="./Images/coding_icon.png">
         <link rel="stylesheet" type="text/css" href="./CSS/Portfolio_Stylesheet.css">
     </head>
 
@@ -13,9 +14,10 @@
         <!--NAVBAR-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
         <br>
         <br>
@@ -47,6 +49,45 @@
             </strong>
         </div>
 
+        <!--SLIDESHOW-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./Images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JavaScript Logos">
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./Images/C_Sharp_and_Dot_NET.png" alt="C# Logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./Images/SQL_and_Database.jpg" alt="SQL Logo">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./Images/Rainbow_Fort.jfif" alt="My Cat">
+                        <div class="text">My cat Leo.</div>
+                    </div>
+
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+
         <!--ABOUT-->
         <div class="Row" id="About">
             <!--LEFT-->
@@ -57,7 +98,7 @@
             <div class="Column_1">
                 <h1>About</h1>
                 <p>
-                    I am a comics writer and software developer currently based in Nashville TN. While I'm new to the tech world,
+                    I am a software developer and comics writer. While I'm new to the tech world,
                     I've been a lifelong storyteller, and seek to bring those instincts to my new profession.
                     <br>
                     <br>
@@ -91,25 +132,25 @@
         </div>
 
         <!--CONTACT-->
-        <div class="Row" id="Contact">
-            <!--CONTACT IMAGE-->
-            <div class="Column_2 Column_tall">
-                <img class="Rumplepuff" src="./Images/Rainbow_Fort.jfif" alt="Sweet Leo">
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                 <form action="https://formspree.io/uebcomic@gmail.com" method="POST" class="form-container">
+                     <h1>Contact</h1>
+                     <label for="name"><b>Name</b></label>
+                       <input type="text" placeholder="Your name" name="name" required>
+                     <label for="phone"><b>Phone</b></label>
+                       <input type="text" placeholder="Your phone number (optional)" name="phone">
+                     <label for="email"><b>Email</b></label>		
+                       <input type="text" placeholder="Your email address" name="email" required>
+                     <label for="message"><b>Message</b></label>
+                       <input type="text" placeholder="Personal message" name="message">
+          
+                     <button type="submit" class="btn">SUBMIT</button>
+                     <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                 </form>
             </div>
-            <!--CONTACT FORM-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <form action="" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
-                </form>
-            </div>
-        </div>
+         </div>
 
         <!--FOOTER-->
         <footer>
@@ -118,5 +159,6 @@
                 <br>
             </p>
         </footer>
+        <script src="./JS/Portfolio_JavaScript.js"></script>"
     </body>
 </html>
